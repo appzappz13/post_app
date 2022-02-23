@@ -1,0 +1,350 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>Winku Social Network Toolkit</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link rel="icon" href="{% static 'images/fav.png' %}" type="image/png" sizes="16x16">
+
+	<link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/color.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+
+</head>
+
+<body>
+	<div class="theme-layout">
+		<div class="topbar stick">
+			<div class="logo">
+				<a title="" href="newsfeed.html"><img src="{% static 'images/logo.png' %}" alt=""></a>
+			</div>
+
+			<div class="top-area">
+				<ul class="main-menu">
+					<li>
+						<a href="#" title="">Home</a>
+
+					</li>
+					<li>
+						<a href="#" title="">timeline</a>
+					</li>
+
+				</ul>
+				<div class="user-img"><b style="padding:10px;">Hello : {{user.username}} </b>
+
+
+
+					<img src="{% static 'images/resources/admin.jpg' %}" alt="">
+
+					<div class="user-setting">
+
+						<a href="#" title=""><i class="ti-user"></i> view profile</a>
+						<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
+
+					</div>
+
+
+				</div>
+
+
+
+				<span class="fa fa-sign-out" style="color: #ff6c00; font-size:24px; padding-top: 20px;"
+					aria-hidden="true" data-toggle="modal" data-target="#my-modal"></span>
+			</div>
+		</div>
+
+
+
+
+		<section>
+			<div class="gap gray-bg">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="row" id="page-contents">
+								<!-- <div class="col-lg-1">
+									<aside class="sidebar static"> -->
+										<!-- <div class="widget">
+											<h4 class="widget-title">Shortcuts</h4>
+											<ul class="naves">
+												<li>
+													<i class="ti-clipboard"></i>
+													<a href="newsfeed.html" title="">News feed</a>
+												</li>
+												<li>
+													<i class="ti-mouse-alt"></i>
+													<a href="inbox.html" title="">Inbox</a>
+												</li>
+
+
+											</ul>
+										</div> -->
+										<!-- <div class="widget">
+											<h4 class="widget-title">Recent Activity</h4>
+											<ul class="activitiez">
+												<li>
+													<div class="activity-meta">
+														<i>10 hours Ago</i>
+														<span><a href="#" title="">Commented on Video posted </a></span>
+														<h6>by <a href="time-line.html">black demon.</a></h6>
+													</div>
+												</li>
+												<li>
+													<div class="activity-meta">
+														<i>30 Days Ago</i>
+														<span><a href="#" title="">Posted your status. “Hello guys, how
+																are you?”</a></span>
+													</div>
+												</li>
+												<li>
+													<div class="activity-meta">
+														<i>2 Years Ago</i>
+														<span><a href="#" title="">Share a video on her
+																timeline.</a></span>
+														<h6>"<a href="#">you are so funny mr.been.</a>"</h6>
+													</div>
+												</li>
+											</ul>
+										</div> -->
+
+									<!-- </aside>
+								</div> -->
+								<!-- sidebar -->
+
+								
+
+									{% block content %}
+
+									
+
+									{% endblock %}
+								
+							</div>
+						</div>
+					</div>
+				</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4">
+						<div class="widget">
+							<div class="foot-logo">
+								<div class="logo">
+									<a href="index-2.html" title=""><img src="{% static 'images/logo.png' %}"
+											alt=""></a>
+								</div>
+								<p>
+									The trio took this simple idea and built it into the world’s leading carpooling
+									platform.
+								</p>
+							</div>
+							<ul class="location">
+								<li>
+									<i class="ti-map-alt"></i>
+									<p>33 new montgomery st.750 san francisco, CA USA 94105.</p>
+								</li>
+								<li>
+									<i class="ti-mobile"></i>
+									<p>+1-56-346 345</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title">
+								<h4>follow</h4>
+							</div>
+							<ul class="list-style">
+								<li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/"
+										title="">facebook</a></li>
+								<li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en"
+										title="">twitter</a></li>
+								<li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en"
+										title="">instagram</a></li>
+								<li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover"
+										title="">Google+</a></li>
+								<li><i class="fa fa-pinterest-square"></i> <a href="https://www.pinterest.com/"
+										title="">Pintrest</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title">
+								<h4>Navigate</h4>
+							</div>
+							<ul class="list-style">
+								<li><a href="about.html" title="">about us</a></li>
+								<li><a href="contact.html" title="">contact us</a></li>
+								<li><a href="terms.html" title="">terms & Conditions</a></li>
+								<li><a href="#" title="">RSS syndication</a></li>
+								<li><a href="sitemap.html" title="">Sitemap</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title">
+								<h4>useful links</h4>
+							</div>
+							<ul class="list-style">
+								<li><a href="#" title="">leasing</a></li>
+								<li><a href="#" title="">submit route</a></li>
+								<li><a href="#" title="">how does it work?</a></li>
+								<li><a href="#" title="">agent listings</a></li>
+								<li><a href="#" title="">view All</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-4">
+						<div class="widget">
+							<div class="widget-title">
+								<h4>download apps</h4>
+							</div>
+							<ul class="colla-apps">
+								<li><a href="https://play.google.com/store?hl=en" title=""><i
+											class="fa fa-android"></i>android</a></li>
+								<li><a href="https://www.apple.com/lae/ios/app-store/" title=""><i
+											class="ti-apple"></i>iPhone</a></li>
+								<li><a href="https://www.microsoft.com/store/apps" title=""><i
+											class="fa fa-windows"></i>Windows</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer><!-- footer -->
+		<div class="bottombar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<span class="copyright"><a target="_blank" href="https://www.templateshub.net">Templates
+								Hub</a></span>
+						<i><img src="{% static 'images/credit-cards.png' %}" alt=""></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="side-panel">
+			<h4 class="panel-title">General Setting</h4>
+			<form method="post">
+				<div class="setting-row">
+					<span>use night mode</span>
+					<input type="checkbox" id="nightmode1"/> 
+					<label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Notifications</span>
+					<input type="checkbox" id="switch22" /> 
+					<label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Notification sound</span>
+					<input type="checkbox" id="switch33" /> 
+					<label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>My profile</span>
+					<input type="checkbox" id="switch44" /> 
+					<label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Show profile</span>
+					<input type="checkbox" id="switch55" /> 
+					<label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+			</form>
+			<h4 class="panel-title">Account Setting</h4>
+			<form method="post">
+				<div class="setting-row">
+					<span>Sub users</span>
+					<input type="checkbox" id="switch66" /> 
+					<label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>personal account</span>
+					<input type="checkbox" id="switch77" /> 
+					<label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Business account</span>
+					<input type="checkbox" id="switch88" /> 
+					<label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Show me online</span>
+					<input type="checkbox" id="switch99" /> 
+					<label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Delete history</span>
+					<input type="checkbox" id="switch101" /> 
+					<label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Expose author name</span>
+					<input type="checkbox" id="switch111" /> 
+					<label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+			</form>
+		</div> side panel -->
+
+
+
+
+
+	<!-- logout alert popup -->
+	<div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content border-0">
+				<div class="modal-body p-0">
+					<div class="card border-0 p-sm-3 p-2 justify-content-center">
+						<div class="card-header pb-0 bg-white border-0 ">
+							<div class="row">
+								<div class="col ml-auto"><button type="button" class="close" data-dismiss="modal"
+										aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
+							</div>
+							<a href=></a>
+							<p class="font-weight-bold mb-2"> Are you sure to Logout ?</p></a>
+							<!-- <a href=""><p class="text-muted "> This change will reflect in your portal after an hour.</p></a> -->
+
+						</div>
+						<div class="card-body px-sm-4 mb-2 pt-1 pb-0">
+							<div class="row justify-content-end no-gutters">
+								<div class="col-auto"><button type="button" class="btn btn-light text-muted"
+										data-dismiss="modal">Cancel</button></div>
+								<a href="{% url 'logout' %}">
+									<div class="col-auto"><button type="button" class="btn btn-default px-4"
+											style="background-color: #ff6c00; color: white;">Logout</button></div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- logout alert popup -->
+
+	<script data-cfasync="false"
+		src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+	<script src="{% static 'js/main.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'js/map-init.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
+
+</body>
+
+</html>

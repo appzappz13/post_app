@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="central-meta">
+    <div class="new-postbox">
+        <figure>
+            <img src="{% static 'images/resources/admin2.jpg' %}" alt="">
+        </figure>
+        <div class="newpst-input">
+
+            <script>
+                function validateForm() {
+                    var x = document.forms["myForm"]["post_content"].value;
+                    if (x == "" || x == null) {
+                        alert("Name must be filled out");
+                        return false;
+                    }
+                }
+                function previewFile(input) {
+                    var file = $("input[type=file]").get(0).files[0];
+
+                    if (file) {
+                        var reader = new FileReader();
+
+                        reader.onload = function () {
+                            $("#previewImg").attr("src", reader.result);
+                        }
+
+                        reader.readAsDataURL(file);
+                    }
+                }
+
+            </script>
+            {% for i in current_post %}
+
+            <form  action="{% url 'update_post' i.id %}" method="post"   enctype="multipart/form-data">
+                {% csrf_token %}
+                <textarea rows="5"  name= "update_content"  required onsubmit="return validateForm()">{{ i.post_content}}</textarea>
+                <li>
+                    <img id="previewImg" src="/examples/images/transparent.png"
+                        alt="">
+                </li>
+
+                <div class="attachments">
+
+                    <ul>
+                        <li>
+                            <i class="fa fa-image" style="font-size: 25px;"></i>
+                            <label class="fileContainer">
+                                <input type="file" name="update_image" onchange="previewFile(this);" >
+                            </label>
+                        </li>
+
+                        <li>
+                            <button type="submit" class="btn btn-primary" value="Submit">Update Post</button>
+
+                            <a href="{% url 'home' %}" class="btn btn-primary" type="button">Cancel Edit</a>
+
+                           
+                        </li>
+                       
+                    </ul>
+                </div>
+            </form>
+           
+            <!-- post form script -->
+
+        </div>
+        <div central-meta >
+            <div class="post-meta">
+                {% if i.post_image %}
+                <img src="{{ i.post_image.url }}" alt="" style="height: 100px; width: 150px;" >
+                {% endif %}
+        
+                <div class="description">
+        
+                </div>
+            </div>
+        
+        </div>
+        <!-- add post new box -->
+    </div>
+
+</div>
+
+
+{% endfor %}
+
+{% endblock%}

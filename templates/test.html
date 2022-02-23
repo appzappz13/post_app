@@ -1,0 +1,73 @@
+
+
+										<div class="new-postbox">
+											<figure>
+												<img src="{% static 'images/resources/admin2.jpg' %}" alt="">
+											</figure>
+											<div class="newpst-input">
+
+
+												<form method="post" action="{% url 'posting' %}"
+													enctype="multipart/form-data">
+													{% csrf_token %}
+													<textarea rows="5" placeholder="write something" name="post_content"
+														name="myForm" required
+														onsubmit="return validateForm()"></textarea>
+													<div class="attachments">
+														<ul>
+
+															<li>
+																<i class="fa fa-image"></i>
+																<label class="fileContainer">
+																	<input type="file" name="post_image"
+																		onchange="readURL(this);" accept="image/*" />
+																</label>
+															</li>
+															<!-- To display image -->
+															<img id="myimage" src="xyz">
+													</div>
+
+
+													<script>
+														function readURL(input) {
+															if (input.files && input.files[0]) {
+																var reader = new FileReader();
+
+																reader.onload = function (e) {
+																	$('#myimage').attr('src', e.target.result);
+																};
+
+																reader.readAsDataURL(input.files[0]);
+															}
+														}
+													</script>
+
+
+													<!-- To upload new image -->
+													<!-- <input name="images" onchange="readURL(this);" type="file" accept="image/*"/> -->
+
+													
+
+													<li>
+														<button type="submit" value="Submit">Post</button>
+													</li>
+													</ul>
+											</div>
+											</form>
+
+											<script>
+												function validateForm() {
+													var x = document.forms["myForm"]["post_content"].value;
+													if (x == "" || x == null) {
+														alert("Name must be filled out");
+														return false;
+													}
+												}
+											</script>
+
+
+
+										</div>
+									</div>
+								</div>url
+								<!-- add post new box -->

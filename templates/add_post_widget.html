@@ -1,0 +1,66 @@
+{% load static %}
+<div class="col-lg-9">
+    <div class="central-meta">
+        <div class="new-postbox">
+            <figure>
+                <img src="{% static 'images/resources/admin2.jpg' %}" alt="">
+            </figure>
+            <div class="newpst-input">
+
+                <script>
+                    function validateForm() {
+                        var x = document.forms["myForm"]["post_content"].value;
+                        if (x == "" || x == null) {
+                            alert("Name must be filled out");
+                            return false;
+                        }
+                    }
+                    function previewFile(input) {
+                        var file = $("input[type=file]").get(0).files[0];
+
+                        if (file) {
+                            var reader = new FileReader();
+
+                            reader.onload = function () {
+                                $("#previewImg").attr("src", reader.result);
+                            }
+
+                            reader.readAsDataURL(file);
+                        }
+                    }
+
+                </script>
+
+                <form method="post" action="{% url 'posting' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <textarea rows="5" placeholder="write something" name="post_content" name="myForm" required
+                        onsubmit="return validateForm()"></textarea>
+                    <li>
+                        <img id="previewImg" src="/examples/images/transparent.png" alt="">
+                    </li>
+
+                    <div class="attachments">
+
+                        <ul>
+                            <li>
+                                <i class="fa fa-image"></i>
+                                <label class="fileContainer">
+                                    <input type="file" name="post_image" onchange="previewFile(this);" required>
+                                </label>
+                            </li>
+
+                            <li>
+                                <button type="submit" class="btn btn-primary" value="Submit">Post</button>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+
+                <!-- post form script -->
+
+            </div>
+        </div>
+    </div>
+    {% include 'post_widget.html' %}
+</div>
+<!-- add post new box -->
